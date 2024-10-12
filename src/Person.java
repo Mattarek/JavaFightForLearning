@@ -20,6 +20,10 @@ public abstract class Person {
 		System.out.println(firstName + " " + lastName + " krzyczy.");
 	}
 
+	public int getAge() {
+		return age;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
