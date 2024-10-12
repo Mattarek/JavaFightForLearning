@@ -13,7 +13,7 @@ public class Main {
 			System.out.println("HP profesora: " + professor.getHp());
 
 			if ( professor.getHp() <= 0 ) {
-				System.out.println("\n" + professor.getFirstName() + " został pokonany! " + student.getFirstName() + " wygrywa!");
+				System.out.println("\n" + professor.getFirstName() + professor.getLastName() + " został pokonany! " + student.getFirstName() + " wygrywa!");
 				break;
 			}
 

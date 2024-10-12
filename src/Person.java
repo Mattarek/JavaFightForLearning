@@ -37,7 +37,7 @@ public abstract class Person {
 	}
 
 	public int attack() {
-		int randomNumber = 5 + random.nextInt(11);
+		final int randomNumber = 5 + random.nextInt(11);
 		return randomNumber;
 	}
 
