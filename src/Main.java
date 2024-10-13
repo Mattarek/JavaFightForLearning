@@ -1,8 +1,9 @@
 public class Main {
 	public static void main( String[] args ) {
-		Student student = new Student("John", "Doe", 20, 100);
-		Professor professor = new Professor("Dr.", "Smith", 45, "Professor", 100);
+		Student student = new Student("John", "Doe", 20, 100, 2137);
+		Professor professor = new Professor("Dr.", "Smith", 45, "Professor", 100, ProfessorsSpecialization.LITERATURE);
 
+		System.out.println(professor.getProfessorSpecialization());
 		System.out.println("Walka zaczyna się!");
 
 		while ( student.getHp() > 0 && professor.getHp() > 0 ) {

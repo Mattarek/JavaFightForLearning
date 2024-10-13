@@ -1,11 +1,13 @@
 import java.util.Objects;
 
 public final class Professor extends Person {
+	private final ProfessorsSpecialization professorSpecialization;
 	private String title;
 
-	public Professor( String firstName, String lastName, int age, String title, int hp ) {
+	public Professor( String firstName, String lastName, int age, String title, int hp, ProfessorsSpecialization professorSpecialization ) {
 		super(firstName, lastName, age, hp);
 		this.title = title;
+		this.professorSpecialization = professorSpecialization;
 	}
 
 	public String getTitle() {
@@ -14,6 +16,10 @@ public final class Professor extends Person {
 
 	public void setTitle( String title ) {
 		this.title = title;
+	}
+
+	public ProfessorsSpecialization getProfessorSpecialization() {
+		return professorSpecialization;
 	}
 
 	@Override
