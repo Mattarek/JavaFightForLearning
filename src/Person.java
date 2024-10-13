@@ -9,7 +9,7 @@ public abstract class Person {
 
 	Random random = new Random();
 
-	public Person( String firstName, String lastName, int age, int hp ) {
+	public Person(final String firstName, final String lastName, final int age, final int hp) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
@@ -36,8 +36,8 @@ public abstract class Person {
 		return hp;
 	}
 
-	public void setHp( int newHp ) {
-		this.hp = newHp;
+	public void setHp(final int newHp) {
+		hp = newHp;
 	}
 
 	public int attack() {
@@ -51,11 +51,15 @@ public abstract class Person {
 	}
 
 	@Override
-	public boolean equals( Object o ) {
-		if ( this == o ) return true;
-		if ( o == null || getClass() != o.getClass() ) return false;
+	public boolean equals(final Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
 
-		Person person = (Person)o;
+		final Person person = (Person) o;
 		return age == person.age && hp == person.hp && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(random, person.random);
 	}
 

@@ -3,7 +3,7 @@ public enum ProfessorsSpecialization {
 
 	private final String name;
 
-	ProfessorsSpecialization( String name ) {
+	ProfessorsSpecialization(final String name) {
 		this.name = name;
 	}
 

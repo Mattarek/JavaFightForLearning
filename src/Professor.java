@@ -4,7 +4,7 @@ public final class Professor extends Person {
 	private final ProfessorsSpecialization professorSpecialization;
 	private String title;
 
-	public Professor( String firstName, String lastName, int age, String title, int hp, ProfessorsSpecialization professorSpecialization ) {
+	public Professor(final String firstName, final String lastName, final int age, final String title, final int hp, final ProfessorsSpecialization professorSpecialization) {
 		super(firstName, lastName, age, hp);
 		this.title = title;
 		this.professorSpecialization = professorSpecialization;
@@ -14,7 +14,7 @@ public final class Professor extends Person {
 		return title;
 	}
 
-	public void setTitle( String title ) {
+	public void setTitle(final String title) {
 		this.title = title;
 	}
 
@@ -28,11 +28,15 @@ public final class Professor extends Person {
 	}
 
 	@Override
-	public boolean equals( Object o ) {
-		if ( this == o ) return true;
-		if ( o == null || getClass() != o.getClass() ) return false;
+	public boolean equals(final Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
 
-		Professor professor = (Professor)o;
+		final Professor professor = (Professor) o;
 		return Objects.equals(title, professor.title);
 	}
 

@@ -1,7 +1,7 @@
 public final class Student extends Person {
 	private final int indexNumber;
 
-	public Student( String firstName, String lastName, int age, int hp, int indexNumber ) {
+	public Student(final String firstName, final String lastName, final int age, final int hp, final int indexNumber) {
 		super(firstName, lastName, age, hp);
 		this.indexNumber = indexNumber;
 	}
@@ -12,12 +12,18 @@ public final class Student extends Person {
 	}
 
 	@Override
-	public boolean equals( Object o ) {
-		if ( this == o ) return true;
-		if ( o == null || getClass() != o.getClass() ) return false;
-		if ( !super.equals(o) ) return false;
+	public boolean equals(final Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		if (!super.equals(o)) {
+			return false;
+		}
 
-		Student student = (Student)o;
+		final Student student = (Student) o;
 		return indexNumber == student.indexNumber;
 	}
 

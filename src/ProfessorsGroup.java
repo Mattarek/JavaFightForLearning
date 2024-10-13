@@ -3,22 +3,22 @@ import java.util.List;
 
 public class ProfessorsGroup {
 	private final int MAX_STUDENTS = 25;
-	private final List< Student > students;
+	private final List<Student> students;
 	private Professor professor;
 
-	public ProfessorsGroup( Professor professor ) {
+	public ProfessorsGroup(final Professor professor) {
 		this.professor = professor;
-		this.students = new ArrayList<>();
+		students = new ArrayList<>();
 	}
 
-	public void addStudent( Student student ) {
-		if ( students.size() < MAX_STUDENTS ) {
+	public void addStudent(final Student student) {
+		if (students.size() < MAX_STUDENTS) {
 			students.add(student);
 		}
 		throw new IllegalArgumentException("Group is full. You can't add more than " + MAX_STUDENTS);
 	}
 
-	public void removeStudent( Student student ) {
+	public void removeStudent(final Student student) {
 		students.remove(student);
 	}
 
@@ -26,11 +26,11 @@ public class ProfessorsGroup {
 		return professor;
 	}
 
-	public void setProfessor( Professor professor ) {
+	public void setProfessor(final Professor professor) {
 		this.professor = professor;
 	}
 
-	public List< Student > getStudents() {
+	public List<Student> getStudents() {
 		return students;
 	}
 
@@ -40,11 +40,15 @@ public class ProfessorsGroup {
 	}
 
 	@Override
-	public boolean equals( Object o ) {
-		if ( this == o ) return true;
-		if ( o == null || getClass() != o.getClass() ) return false;
+	public boolean equals(final Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
 
-		ProfessorsGroup that = (ProfessorsGroup)o;
+		final ProfessorsGroup that = (ProfessorsGroup) o;
 		return MAX_STUDENTS == that.MAX_STUDENTS && professor.equals(that.professor) && students.equals(that.students);
 	}
 
