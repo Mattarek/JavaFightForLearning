@@ -3,12 +3,11 @@ import java.util.List;
 
 public class ProfessorsGroup {
 	private final int MAX_STUDENTS = 25;
-	private final List<Student> students;
+	private final List<Student> students = new ArrayList<>();
 	private Professor professor;
 
 	public ProfessorsGroup(final Professor professor) {
 		this.professor = professor;
-		students = new ArrayList<>();
 	}
 
 	public void addStudent(final Student student) {

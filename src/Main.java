@@ -1,7 +1,8 @@
 public class Main {
 	public static void main(final String[] args) {
 		final Student student = new Student("John", "Doe", 20, 100, 2137);
-		final Professor professor = new Professor("Dr.", "Smith", 45, "Professor", 100, ProfessorsSpecialization.LITERATURE);
+		final Professor professor = new Professor("Kenny.", "Smith", 45, "Professor", 100,
+				ProfessorsSpecialization.LITERATURE);
 
 		System.out.println(professor.getProfessorSpecialization());
 		System.out.println("Walka zaczyna się!");
@@ -10,18 +11,24 @@ public class Main {
 			System.out.println("--- Tura studenta ---");
 			final int studentAttack = student.attack();
 			professor.setHp(professor.getHp() - studentAttack);
-			System.out.println(student.getFirstName() + " atakuje " + professor.getFirstName() + professor.getLastName() + "a" + " za " + studentAttack + " obrażeń.");
+			System.out.println(student.getFirstName() + " atakuje "
+					+ professor.getFirstName() + professor.getLastName()
+					+ "a" + " za " + studentAttack + " obrażeń.");
 			System.out.println("HP profesora: " + professor.getHp());
 
 			if (professor.getHp() <= 0) {
-				System.out.println("\n" + professor.getFirstName() + professor.getLastName() + " został pokonany! " + student.getFirstName() + " wygrywa!");
+				System.out.println("\n" + professor.getFirstName() + professor.getLastName()
+						+ " został pokonany! " + student.getFirstName() + " wygrywa!");
 				break;
 			}
 
 			System.out.println("--- Tura profesora ---");
 			final int professorAttack = professor.attack();
 			student.setHp(student.getHp() - professorAttack); //
-			System.out.println(professor.getFirstName() + professor.getLastName() + " atakuje " + student.getFirstName() + " za " + professorAttack + " obrażeń.");
+			System.out.println(professor.getFirstName() + professor.getLastName()
+					+ " atakuje " + student.getFirstName() + " za " + professorAttack
+					+ " obrażeń."
+			);
 			System.out.println("HP studenta: " + student.getHp());
 
 			if (student.getHp() <= 0) {

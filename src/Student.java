@@ -8,7 +8,12 @@ public final class Student extends Person {
 
 	@Override
 	public String toString() {
-		return "Student{" + "firstName='" + getFirstName() + '\'' + ", lastName='" + getLastName() + '\'' + ", age=" + getAge() + ", hp=" + getHp() + '}';
+		return "Student{"
+				+ "firstName='"
+				+ getFirstName() + '\''
+				+ ", lastName='" + getLastName() + '\''
+				+ ", age=" + getAge() + ", hp="
+				+ getHp() + '}';
 	}
 
 	@Override

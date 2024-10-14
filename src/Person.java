@@ -2,12 +2,11 @@ import java.util.Objects;
 import java.util.Random;
 
 public abstract class Person {
+	private static final Random random = new Random();
 	protected String firstName;
 	protected String lastName;
 	protected int age;
 	protected int hp;
-
-	Random random = new Random();
 
 	public Person(final String firstName, final String lastName, final int age, final int hp) {
 		this.firstName = firstName;
@@ -17,7 +16,7 @@ public abstract class Person {
 	}
 
 	public void makeSomeVoice() {
-		System.out.println(firstName + " " + lastName + " krzyczy.");
+		System.out.printf(firstName + " " + lastName + " krzyczy.");
 	}
 
 	public int getAge() {
@@ -41,13 +40,17 @@ public abstract class Person {
 	}
 
 	public int attack() {
-		final int randomNumber = 5 + random.nextInt(11);
-		return randomNumber;
+		return 5 + random.nextInt(11);
 	}
 
 	@Override
 	public String toString() {
-		return "Person{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", age=" + age + ", hp=" + hp + ", random=" + random + '}';
+		return "Person{" + "firstName='"
+				+ firstName + '\''
+				+ ", lastName='"
+				+ lastName
+				+ '\'' + ", age=" + age + ", hp=" + hp
+				+ ", random=" + random + '}';
 	}
 
 	@Override
@@ -60,7 +63,9 @@ public abstract class Person {
 		}
 
 		final Person person = (Person) o;
-		return age == person.age && hp == person.hp && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(random, person.random);
+		return age == person.age && hp == person.hp
+				&& Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName)
+				&& Objects.equals(random, random);
 	}
 
 	@Override
