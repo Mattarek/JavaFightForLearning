@@ -1,19 +1,14 @@
 public final class Student extends Person {
 	private final int indexNumber;
 
-	public Student(final String firstName, final String lastName, final int age, final int hp, final int indexNumber) {
-		super(firstName, lastName, age, hp);
+	public Student(final String firstName, final String lastName, final int age, final int hp, final int indexNumber, final PersonalNumber personalNumber) {
+		super(firstName, lastName, age, hp, personalNumber);
 		this.indexNumber = indexNumber;
 	}
 
 	@Override
 	public String toString() {
-		return "Student{"
-				+ "firstName='"
-				+ getFirstName() + '\''
-				+ ", lastName='" + getLastName() + '\''
-				+ ", age=" + getAge() + ", hp="
-				+ getHp() + '}';
+		return "Student{" + "firstName='" + getFirstName() + '\'' + ", lastName='" + getLastName() + '\'' + ", age=" + getAge() + ", hp=" + getHp() + '}';
 	}
 
 	@Override

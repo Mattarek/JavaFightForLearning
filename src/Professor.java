@@ -4,8 +4,9 @@ public final class Professor extends Person {
 	private final ProfessorsSpecialization professorSpecialization;
 	private String title;
 
-	public Professor(final String firstName, final String lastName, final int age, final String title, final int hp, final ProfessorsSpecialization professorSpecialization) {
-		super(firstName, lastName, age, hp);
+	public Professor(final String firstName, final String lastName, final int age, final String title, final int hp,
+					 final ProfessorsSpecialization professorSpecialization, final PersonalNumber personalNumber) {
+		super(firstName, lastName, age, hp, personalNumber);
 		this.title = title;
 		this.professorSpecialization = professorSpecialization;
 	}

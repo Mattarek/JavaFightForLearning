@@ -7,12 +7,15 @@ public abstract class Person {
 	protected String lastName;
 	protected int age;
 	protected int hp;
+	protected PersonalNumber personalNumber;
 
-	public Person(final String firstName, final String lastName, final int age, final int hp) {
+	public Person(final String firstName, final String lastName, final int age, final int hp,
+				  final PersonalNumber personalNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.hp = hp;
+		this.personalNumber = personalNumber; // Używamy przekazanego obiektu bez tworzenia nowego
 	}
 
 	public void makeSomeVoice() {
@@ -44,37 +47,33 @@ public abstract class Person {
 	}
 
 	@Override
-	public String toString() {
-		return "Person{" + "firstName='"
-				+ firstName + '\''
-				+ ", lastName='"
-				+ lastName
-				+ '\'' + ", age=" + age + ", hp=" + hp
-				+ ", random=" + random + '}';
-	}
-
-	@Override
 	public boolean equals(final Object o) {
 		if (this == o) {
 			return true;
 		}
-		if (o == null || getClass() != o.getClass()) {
+		if (!(o instanceof final Person person)) {
 			return false;
 		}
-
-		final Person person = (Person) o;
-		return age == person.age && hp == person.hp
-				&& Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName)
-				&& Objects.equals(random, random);
+		return age == person.age
+				&& hp == person.hp
+				&& Objects.equals(firstName, person.firstName)
+				&& Objects.equals(lastName, person.lastName)
+				&& Objects.equals(personalNumber, person.personalNumber);
 	}
 
 	@Override
 	public int hashCode() {
-		int result = Objects.hashCode(firstName);
-		result = 31 * result + Objects.hashCode(lastName);
-		result = 31 * result + age;
-		result = 31 * result + hp;
-		result = 31 * result + Objects.hashCode(random);
-		return result;
+		return Objects.hash(firstName, lastName, age, hp, personalNumber);
+	}
+
+	@Override
+	public String toString() {
+		return "Person{" +
+				"firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", age=" + age +
+				", hp=" + hp +
+				", personalNumber=" + personalNumber +
+				'}';
 	}
 }

@@ -1,8 +1,10 @@
 public class Main {
 	public static void main(final String[] args) {
-		final Student student = new Student("John", "Doe", 20, 100, 2137);
+		final PersonalNumber personalNumberStudent = new PersonalNumber("81100216357");
+		final PersonalNumber personalNumberProfessor = new PersonalNumber("92071314764");
+		final Student student = new Student("John", "Doe", 20, 100, 2137, personalNumberStudent);
 		final Professor professor = new Professor("Kenny.", "Smith", 45, "Professor", 100,
-				ProfessorsSpecialization.LITERATURE);
+				ProfessorsSpecialization.LITERATURE, personalNumberProfessor);
 
 		System.out.println(professor.getProfessorSpecialization());
 		System.out.println("Walka zaczyna się!");
